@@ -1,0 +1,513 @@
+:root {
+    --primary-color: #C2C1BD; /* Color principal */
+    --secondary-color: #6a4f41; /* Color secundario */
+    --text-color: #000000; /* Color del texto */
+    --background-color: #0000001c; /* Color de fondo general */
+    --button-color: #8f866cb2; /* Color de los botones */
+    --button-hover-color: #99824450; /* Color de los botones al pasar el mouse */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00000048;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    background-color: var(--primary-color);
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Añadir esta línea para distribuir el espacio */
+    padding: 0 30px;
+}
+
+.logo {
+    height: 120px;
+}
+
+.menu-lateral img{
+    display: none
+}
+
+
+/*MENU*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans';
+}
+
+.menu-horizontal{
+	list-style: none;
+	display: flex;
+	justify-content: left;
+    text-align: center;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.menu-horizontal > li > a{
+	display: block;
+	padding: 6px 15px;
+	color: var(--text-color);
+	text-decoration: none;
+}
+.menu-horizontal > li:hover{
+	background-color: var(--button-color);
+    border-radius: 1px 10px;
+}
+.menu-vertical{
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 100px;
+    border-radius: 10px;
+	background-color: rgba(0, 0, 0, .5);
+}
+.menu-horizontal li:hover .menu-vertical{
+	display: block;
+}
+.menu-vertical li:hover{
+	background-color: black;
+    border-radius: 10px;
+}
+
+.menu-vertical li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding: 8px 8px 8px 8px;
+}
+
+
+
+/*Busqueda*/
+/* From Uiverse.io by satyamchaudharydev */ 
+/* From uiverse.io by @satyamchaudharydev */
+/* this button is inspired by -- whatsapp input */
+/* == type to see fully interactive and click the close buttom to remove the text  == */
+
+.form {
+    margin-left: auto;
+    --input-bg: #ffffffb2;
+    --padding: 15px;
+    --rotate: 80deg;
+    --gap: 1.8em;
+    --icon-change-color: #15A986;
+    height: 20px; /* Ajusta según sea necesario */
+    width: 50%; /* Ajusta según sea necesario */
+    max-width: 180px; /* Ajusta el ancho máximo según sea necesario */
+    background: var(--input-bg);
+    position: relative;
+    border-radius: 8px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 0 var(--padding); /* Espacio interno a los lados */
+}
+
+.form label {
+    width: 100%;
+    height: 30px;
+    margin-right: 20px;
+    align-content: center;
+}
+
+.form input {
+    width: 100%;
+    padding-inline-start: calc(var(--padding) + var(--gap));
+    outline: none;
+    background: none;
+    border: 0;
+}
+
+.form svg {
+    color: #111;
+    transition: 0.3s cubic-bezier(.4,0,.2,1);
+    position: absolute;
+    height: 20px;
+}
+
+.icon {
+    position: absolute;
+    left: var(--padding);
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar el icono al centro verticalmente */
+    transition: 0.3s cubic-bezier(.4,0,.2,1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Asegúrate de que el ícono esté detrás del botón de cierre */
+}
+
+.swap-off {
+    transform: rotate(-80deg);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #111;
+    transition: 0.3s;
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    right: var(--padding); /* Ajusta el espacio a la derecha */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%) scale(1); /* Ajusta para centrar verticalmente y asegura que el botón esté visible */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido dentro del botón */
+    justify-content: center; /* Centra horizontalmente el contenido dentro del botón */
+}
+
+
+.form input:focus ~ .icon {
+    transform: rotate(var(--rotate)) scale(1.3) translateY(-50%);
+}
+
+.form input:focus ~ .icon .swap-off {
+    opacity: 1;
+    transform: rotate(-80deg);
+    visibility: visible;
+    color: var(--icon-change-color);
+}
+
+.form input:focus ~ .icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+}
+
+.form input:valid ~ .icon {
+    transform: scale(1.3) rotate(var(--rotate)) translateY(-50%);
+}
+
+.form input:valid ~ .icon .swap-off {
+    opacity: 1;
+    visibility: visible;
+    color: var(--icon-change-color);
+}
+
+.form input:valid ~ .icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+}
+
+.form input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: 0s;
+}
+
+
+/* Clima y hora */
+.weather-time {
+    margin-left: auto; /* Esto empujará el contenedor hacia la derecha */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    color: var(--text-color);
+}
+
+.weather {
+    font-size: 14px;
+}
+
+.time {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.weather-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; 
+    align-content: center;
+}
+
+.weather-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.weather-info {
+    font-size: 20px;
+    text-align: left;
+}
+
+.weather-icon-container {
+    margin-right: 10px; /* Espacio entre el ícono y la información del clima */
+    width: 40px;
+    height: 40px;
+    align-items: center;
+}
+
+/* EN VIVO */
+.live-container {
+    display: flex;
+    margin-top: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    align-items: center;
+    height: 40px;
+    width: 90px;
+}
+
+.live-text {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 3px;
+}
+
+.live-image {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+/* Estructura fuera del nav */
+header {
+    background-color: #979797a6;
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/*burger*/
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Ocultar menú fuera de la pantalla */
+    width: 250px; /* Ancho del menú cuando está inactivo */
+    height: 100%;
+    background-color: var(--primary-color);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    opacity: 0; /* Ocultar el menú por defecto */
+    transform: translateX(-100%); /* Mover el menú fuera de la pantalla */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones para transform y opacity */
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    padding: 13px;
+    border-bottom: 1px solid #ddd; /* Efecto de separación más clásico */
+}
+
+.side-menu ul li:hover {
+    border-bottom: 3px solid #00000017; /* Efecto de separación al pasar el cursor */
+}
+
+
+.side-menu ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.side-menu.active {
+    left: 0; /* Mostrar el menú en pantalla */
+    opacity: 1; /* Hacer el menú visible */
+    transform: translateX(0); /* Mover el menú a su posición original */
+    width: auto;
+}
+
+.search {
+    display: inline;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+  
+  .search__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #f4f2f2;
+    border: none;
+    color: #646464;
+    padding: 0.1rem 1rem;
+    border-radius: 30px;
+    width: 100%;
+    transition: all ease-in-out .5s;
+    margin-right: -2rem;
+  }
+  
+  .search__input:hover, .search__input:focus {
+    box-shadow: 0 0 1em #00000013;
+  }
+  
+  .search__input:focus {
+    outline: none;
+  }
+  
+  .search__input::-webkit-input-placeholder {
+    font-weight: 100;
+    color: #ccc;
+  }
+  
+  .search__input:focus + .search__button {
+    background-color: #f0eeee;
+  }
+  
+  .search__button {
+    border: none;
+    background-color: #f4f2f2;
+    margin-top: .1em;
+  }
+  
+  .search__button:hover {
+    cursor: pointer;
+  }
+  
+  .search__icon {
+    height: 1em;
+    width: 1em;
+    fill: #b4b4b4;
+  }
+
+
+@media (max-width: 900px) {
+
+
+    .weather-container {
+        justify-content: center; /* Centra el contenido en pantallas pequeñas */
+    }
+
+    .weather-icon {
+        display: flex;
+    }
+
+    .weather-info {
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+    }
+
+    .weather-icon-container {
+        display: flex;
+    }
+
+    .time {
+        font-size: 18px;
+        margin-top: 3px;
+        text-align: center;
+    }
+
+    .live-container {
+        height: 30px;
+        width: 80px;
+        padding: 3px 7px;
+        border-radius: 10px;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .live-text {
+        font-size: 10px;
+        margin-left: 3px;
+        text-align: center;
+    }
+
+    .live-image {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+
+
+@media (max-width: 700px) {
+
+    nav {
+        height: 50%;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente el contenido */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
+    
+    .logo-container img {
+        width: 50%; /* Ajusta el tamaño del logo para que se adapte a pantallas pequeñas */
+        height: auto; /* Mantiene la proporción del logo */
+    }
+
+    .live-container,
+    .weather-container,
+    .time,
+    .menu-horizontal {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar botón del menú burger */
+        padding-left: 10px;
+    }
+    
+}
+
