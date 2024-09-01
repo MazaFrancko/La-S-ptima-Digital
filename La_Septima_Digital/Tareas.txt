@@ -1,0 +1,19 @@
+Tareas:
+Para el  Lunes en lo posible si llegan a podes necesito lo siguiente 
+@Andres 1.0 si podes  modifique  el css de la página de agregar,eliminar noticias y el del proceso de Registro sin wordpres 
+Nombre de los Archivos:
+añadir_prinsipal.php
+añadir.php
+eliminar.php
+Registro.php
+@Agustin O.  si podes cuando termines el body modificar el css de la modificación de noticias, acciones que realizan los administradores y el Logeo del Administrador.
+Nombres de los Archivos:
+modificar_noticia.php
+Acciones_Administrador.php
+logeo.php
+@Lukas Lop ^^  en lo posible ver lo de wordpres..ya tener maso como agregar las cosas 
+Y yo me voy a poner a terminar la conexión con la base de datos sin wordpres 
+Y también con wordpres 
+No tenerlo listo para el Lunes pero estaría bueno tenerlo un poco avanzado para ver si llegamos a tener la página ya para esta semana 
+Yo voy a subir a git los html que necesitan ya modificado para que puedan empezar 
+Lo que sí en lo posible los css modificado subirlos a git para que no se pierda nada por cualquier cosa.
